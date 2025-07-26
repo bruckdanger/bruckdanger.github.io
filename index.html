@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    window.onload = () => {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code");
+      const state = params.get("state");
+
+      if (code) {
+        // Replace with where you want to send the user (e.g., your bot dashboard or a backend server)
+        const redirectTo = `https://discord.com/app`; // or your backend: https://yourdomain.com/api/auth?code=${code}
+
+        window.location.href = redirectTo;
+      } else {
+        document.body.innerHTML = "<h2>No code provided.</h2>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>Redirecting to Discord...</h2>
+</body>
+</html>
